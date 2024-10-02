@@ -7,6 +7,13 @@ body {
     color: #333;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive Iframe Container */
 .iframe-container {
     position: relative;
     width: 100%;
@@ -22,28 +29,20 @@ body {
     height: 100%;
 }
 
+/* Section Styles */
+.section {
+    padding: 40px 20px; /* Adjusts padding for smaller screens */
+}
+
 .section-title {
-    font-size: 1.5em; 
+    font-size: 1.8em; /* Larger title for better visibility */
+    margin-top: 0;
+    text-align: center; /* Center align titles */
 }
 
 .section-content {
-    font-size: 1em; /* Adjust content size */
-}
-
-@media (max-width: 600px) {
-    .section-title {
-        font-size: 1.2em; /* Smaller title on mobile */
-    }
-
-    .section-content {
-        font-size: 0.9em; /* Smaller content on mobile */
-    }
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    font-size: 1em;
+    text-align: center; /* Center align content */
 }
 
 /* Header Styles */
@@ -51,7 +50,7 @@ body {
     background-color: #0074cc;
     color: #fff;
     text-align: center;
-    padding: 40px 0;
+    padding: 40px 20px;
 }
 
 .header-title {
@@ -65,9 +64,10 @@ body {
 }
 
 .header-image {
-    max-width: 100%; /* Adjust the image width for mobile */
-    height: auto; /* Maintain the image's aspect ratio */
-    margin-bottom: 20px; /* Add spacing between the image and title/subtitle */
+    max-width: 100%; /* Full width on mobile */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Limit maximum height for desktop */
+    margin-bottom: 20px; /* Spacing below the image */
 }
 
 /* Navigation Styles */
@@ -80,34 +80,31 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
     justify-content: center; /* Center items */
 }
 
 .navbar-item {
-    margin: 10px; /* Adjust margin for better spacing on mobile */
+    margin: 10px; /* Uniform margin for better spacing */
 }
 
 .navbar-item a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
+    padding: 10px 15px; /* Padding for clickable area */
+    transition: background-color 0.3s; /* Smooth background color change */
 }
 
-/* Section Styles */
-.section {
-    padding: 40px;
-}
-
-.section-title {
-    font-size: 24px;
-    margin-top: 0;
+.navbar-item a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover effect for links */
 }
 
 /* Feature List Styles */
 .feature-list {
     list-style: none;
     padding: 0;
+    text-align: center; /* Center align features */
 }
 
 .feature-item {
@@ -125,14 +122,14 @@ body {
 .team-member {
     text-align: center;
     margin: 20px;
-    flex: 1 1 150px; /* Allow flexibility and responsiveness */
+    flex: 1 1 150px; /* Responsive flex-basis */
     max-width: 200px; /* Max width for team member cards */
 }
 
 .team-member-image {
     border-radius: 50%;
     width: 100px;
-    height: 100px; /* Set the height to maintain the aspect ratio */
+    height: 100px; /* Set height to maintain aspect ratio */
     border: 4px solid #0074cc;
 }
 
@@ -155,6 +152,47 @@ body {
 }
 
 /* Media Queries for Responsive Design */
+
+/* Desktop Styles */
+@media (min-width: 601px) {
+    .header-title {
+        font-size: 36px; /* Larger header title for desktop */
+    }
+
+    .header-subtitle {
+        font-size: 20px; /* Slightly larger subtitle on desktop */
+    }
+
+    .section-title {
+        font-size: 2em; /* Larger section title on desktop */
+    }
+
+    .section-content {
+        font-size: 1.1em; /* Larger content on desktop */
+    }
+
+    .navbar-item {
+        margin: 10px 20px; /* Larger margin for navbar items on desktop */
+    }
+
+    .feature-item {
+        font-size: 20px; /* Larger feature list items on desktop */
+    }
+
+    .team-member {
+        margin: 30px; /* Increased margin for team members on desktop */
+    }
+
+    .team-member-name {
+        font-size: 22px; /* Larger name on desktop */
+    }
+
+    .team-member-role {
+        font-size: 18px; /* Larger role text on desktop */
+    }
+}
+
+/* Mobile Styles */
 @media (max-width: 600px) {
     .header-title {
         font-size: 28px; /* Smaller header title on mobile */
@@ -162,6 +200,14 @@ body {
 
     .header-subtitle {
         font-size: 16px; /* Smaller subtitle on mobile */
+    }
+
+    .section-title {
+        font-size: 1.5em; /* Adjust section title for smaller screens */
+    }
+
+    .section-content {
+        font-size: 0.9em; /* Smaller content on mobile */
     }
 
     .navbar-item {
