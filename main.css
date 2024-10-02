@@ -7,6 +7,39 @@ body {
     color: #333;
 }
 
+.iframe-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.section-title {
+    font-size: 1.5em; 
+}
+
+.section-content {
+    font-size: 1em; /* Adjust content size */
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 1.2em; /* Smaller title on mobile */
+    }
+
+    .section-content {
+        font-size: 0.9em; /* Smaller content on mobile */
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -32,11 +65,10 @@ body {
 }
 
 .header-image {
-    max-width: 25%; /* Adjust the image width as needed */
+    max-width: 100%; /* Adjust the image width for mobile */
     height: auto; /* Maintain the image's aspect ratio */
     margin-bottom: 20px; /* Add spacing between the image and title/subtitle */
 }
-
 
 /* Navigation Styles */
 .navbar {
@@ -47,11 +79,13 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center items */
 }
 
 .navbar-item {
-    display: inline-block;
-    margin-right: 20px;
+    margin: 10px; /* Adjust margin for better spacing on mobile */
 }
 
 .navbar-item a {
@@ -91,6 +125,8 @@ body {
 .team-member {
     text-align: center;
     margin: 20px;
+    flex: 1 1 150px; /* Allow flexibility and responsiveness */
+    max-width: 200px; /* Max width for team member cards */
 }
 
 .team-member-image {
@@ -110,11 +146,41 @@ body {
     color: #777;
 }
 
-
 /* Footer Styles */
 .footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .header-title {
+        font-size: 28px; /* Smaller header title on mobile */
+    }
+
+    .header-subtitle {
+        font-size: 16px; /* Smaller subtitle on mobile */
+    }
+
+    .navbar-item {
+        margin: 5px; /* Adjust margin for navbar items on mobile */
+    }
+
+    .feature-item {
+        font-size: 16px; /* Smaller feature list items on mobile */
+    }
+
+    .team-member {
+        margin: 10px; /* Adjust margin for team members on mobile */
+    }
+
+    .team-member-name {
+        font-size: 18px; /* Smaller name on mobile */
+    }
+
+    .team-member-role {
+        font-size: 14px; /* Smaller role text on mobile */
+    }
 }
